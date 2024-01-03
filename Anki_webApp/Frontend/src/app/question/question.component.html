@@ -1,0 +1,16 @@
+<div>
+  <h2>Question</h2>
+  <p>{{ questionText }}</p>
+
+  <form (ngSubmit)="onSubmit()">
+    <label for="answer">Réponse:</label>
+    <input type="text" id="answer" name="answer" [(ngModel)]="userAnswer" required>
+    <button type="submit">Vérifier la réponse</button>
+  </form>
+
+  <div *ngIf="showResult">
+    <p *ngIf="isAnswerCorrect">Bonne réponse!</p>
+    <p *ngIf="!isAnswerCorrect">Mauvaise réponse. Réessayez!</p>
+  </div>
+</div>
+

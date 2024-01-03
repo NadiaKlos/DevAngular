@@ -1,0 +1,105 @@
+<!-- packet.component.html -->
+<div>
+  <p>Paquets</p>
+  <h2>Créer une carte</h2>
+  <form [formGroup]="packetForm">
+    <label for="matiere">Matière:</label>
+    <input type="text" id="matiere" formControlName="matiere" />
+
+    <label for="titre">Titre:</label>
+    <input type="text" id="titre" formControlName="titre" />
+
+    <label for="question">Question:</label>
+    <input type="text" id="question" formControlName="question" />
+
+    <label for="reponse">Réponse:</label>
+    <input type="text" id="reponse" formControlName="reponse" />
+
+    <!-- Ajoutez le bouton "Valider" -->
+    <button type="button" (click)="submitAnswer()">Valider</button>
+  </form>
+
+  <h2>Mes cartes</h2>
+  <div class="table-container">
+    <table>
+      <thead>
+      <tr>
+        <th>Titre</th>
+        <th>Matière</th>
+        <th>Question</th>
+        <th>Action</th> <!-- Nouvelle colonne pour le bouton "Réponse" -->
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let card of existingCards">
+        <td>{{ card.titre }}</td>
+        <td>{{ card.matiere }}</td>
+        <td>{{ card.question }}</td>
+        <td><button (click)="showAnswer(card.reponse)">Réponse</button></td>
+        <td><button class="delete-button" (click)="deleteCard(card)">Supprimer</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Afficher la réponse uniquement si showAnswerFlag est true -->
+  <div *ngIf="showAnswerFlag">
+    <p>Réponse: {{ currentAnswer }}</p>
+  </div>
+</div>
+
+<div>
+
+  <!-- packet.component.html -->
+  <div class="text-center" *ngIf="questions.length > 0">
+    <h1>M'entraîner 📚</h1>
+    <p class="question-text">{{ questions[currentQuestionIndex].question }}</p>
+
+    <!-- Ajoutez une balise pour afficher la réponse -->
+    <div *ngIf="showAnswerFlag">
+      <h4 class="answer-container">Réponse: {{ questions[currentQuestionIndex].reponse }}</h4>
+    </div>
+
+    <!-- Ajoutez le formulaire pour la réponse -->
+    <form [formGroup]="answerForm">
+      <label for="userAnswer">Votre réponse:</label>
+      <input type="text" id="userAnswer" formControlName="userAnswer" />
+
+      <!-- Ajoutez les boutons de difficulté ici -->
+
+      <div class="difficulty-buttons">
+        <button (click)="setDifficulty('easy')" [ngClass]="{'selected': difficulty === 'easy', 'easy': true}">Facile 😎</button>
+        <button (click)="setDifficulty('medium')" [ngClass]="{'selected': difficulty === 'medium', 'medium': true}">Moyen 😐</button>
+        <button (click)="setDifficulty('hard')" [ngClass]="{'selected': difficulty === 'hard', 'hard': true}">Difficile 😨</button>
+      </div>
+
+      <!-- Bouton pour soumettre la réponse -->
+      <button type="button" class="submit-button" (click)="submitAnswer()">Soumettre la réponse</button>
+      <!-- Afficher la correction -->
+      <!-- Ajoutez la classe "answer-container" à la balise <h4> -->
+      <h4 class="answer-container">Réponse: {{ currentAnswer }}</h4>
+
+      <!-- Ajoutez un élément pour afficher le message de réponse -->
+      <div *ngIf="userAnswerCorrect !== null" class="answer-feedback" [ngClass]="{'correct': userAnswerCorrect, 'incorrect': !userAnswerCorrect}">
+        {{ userAnswerCorrect ? 'Bonne réponse' : 'Mauvaise réponse' }}
+      </div>
+    </form>
+
+    <!-- Afficher le résultat de la réponse -->
+    <div *ngIf="userAnswerCorrect !== null">
+      <p>Résultat: {{ userAnswerCorrect ? 'Correct' : 'Incorrect' }}</p>
+    </div>
+
+    <!-- Afficher la correction -->
+    <div *ngIf="correctionText">
+      <p>{{ correctionText }}</p>
+    </div>
+
+    <!-- Bouton pour passer à la question suivante -->
+    <button type="button" class="next-button" (click)="chooseRandomQuestion()">Question suivante</button>
+  </div>
+
+
+</div>
+
+

@@ -1,0 +1,19 @@
+<!-- card-list.component.html -->
+<button (click)="showCards()">Afficher les cartes</button>
+
+<div *ngIf="showCardList">
+  <div *ngFor="let card of cards">
+    <div>
+      <strong>Matière:</strong> {{ card.matiere }}
+    </div>
+    <div>
+      <strong>Titre:</strong> {{ card.titre }}
+    </div>
+    <div>
+      <strong>Question:</strong> {{ card.question }}
+    </div>
+    <hr />
+  </div>
+</div>
+
+

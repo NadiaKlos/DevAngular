@@ -1,0 +1,7 @@
+<!-- user-registration.component.html -->
+<form [formGroup]="registrationForm">
+  <label for="username">Username:</label>
+  <input type="text" id="username" formControlName="username" />
+  <button (click)="registerUser()">Register</button>
+</form>
+

@@ -1,0 +1,11 @@
+
+
+body {
+  background-color: #87CEEB; /* Bleu ciel */
+}
+
+/* styles.css or your global styles file */
+@import '~ag-grid-community/styles/ag-grid.css';
+@import '~ag-grid-community/styles/ag-theme-alpine.css';
+
+

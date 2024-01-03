@@ -1,0 +1,43 @@
+/* sidebar.component.css */
+.sidebar {
+  display: flex;
+  flex-direction: row; /* Changez la direction de la disposition à ligne */
+  align-items: center; /* Centrer les éléments verticalement */
+  justify-content: space-between; /* Espacement entre les éléments */
+  padding: 10px;
+  background-color: #f2f2f2;
+  height: 60px; /* Ajustez la hauteur de la barre latérale selon vos besoins */
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row; /* Éléments de la liste en ligne */
+}
+
+li {
+  margin-right: 600px; /* Espacement entre les éléments de la liste */
+}
+a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+/* Styles pour les éléments de la sidebar */
+.sidebar-item {
+  font-weight: normal; /* Par défaut, pas en gras */
+
+
+}
+
+/* Styles au survol de la souris */
+.sidebar-item:hover {
+  font-weight: bold; /* Mettre en gras au survol */
+}
+/* sidebar.component.css */
+.sidebar-item:hover {
+  cursor: grab;
+}
+

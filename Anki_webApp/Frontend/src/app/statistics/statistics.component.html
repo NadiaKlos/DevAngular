@@ -1,0 +1,62 @@
+<div class="dashboard-container">
+
+  <!-- Titre du tableau de bord -->
+  <h2 class="dashboard-title">Statistiques</h2>
+  <h3>Ici, vous pouvez suivre votre progession ↗️ et gérer vos objectifs d'apprentissage 🎯</h3>
+  <!-- Ligne 1 du tableau de bord -->
+  <div class="dashboard-row">
+    <!-- Graphique à barres pour le progrès global -->
+    <div class="chart-container">
+      <h3>Progrès global</h3>
+      <div class="chart-wrapper">
+        <canvas baseChart
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [legend]="barChartLegend">
+        </canvas>
+      </div>
+    </div>
+    <!-- Temps moyen de connexion -->
+    <div class="chart-container">
+      <h3>Temps moyen de connexion</h3>
+      <div class="chart-wrapper">
+        <canvas baseChart
+                [datasets]="dailyLoginTimeData"
+                [labels]="dailyLoginTimeLabels"
+                [options]="dailyLoginTimeOptions"
+                [legend]="dailyLoginTimeLegend">
+        </canvas>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Ligne 2 du tableau de bord -->
+  <div class="dashboard-row">
+
+    <!-- Matières à retravailler -->
+    <div class="info-container red-card">
+      <h3> 😠 Matières à travailler (score < 80) 😠</h3>
+      <ul>
+        <li *ngFor="let subject of subjectsToReview">
+          {{ subject.subject }} (Score: {{ subject.score }})
+        </li>
+      </ul>
+    </div>
+    <!-- Moyenne générale aux quiz par matière -->
+    <div class="info-container grey-card">
+      <h3>🏆 Moyenne générale aux quiz par matière 🏆</h3>
+      <ul>
+        <li *ngFor="let avgScore of averageQuizScores">
+          {{ avgScore.subject }}: {{ avgScore.score }}
+        </li>
+      </ul>
+    </div>
+    <!-- Nombre de cartes ajoutées -->
+    <div class="info-container green-card">
+      <p>🃏 Nombre de cartes ajoutées 🃏 </p>
+      <h1>{{ cardsAddedTotal }}</h1>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,129 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+.dashboard-title {
+  color: #3498db;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.dashboard-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.chart-container, .info-container {
+  flex: 1;
+  margin: 0 10px;
+  padding: 80px;
+  background-color: #ecf0f1;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.chart-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.chart-wrapper canvas {
+  max-width: 600px;
+}
+.info-container {
+  text-align: center;
+  background-color: #ffffff; /* Couleur de fond verte */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.info-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info-container li {
+  margin-bottom: 10px;
+  font-size: 30px;
+  color: #101a34;
+}
+
+.info-container {
+  text-align: center;
+}
+.info-container h1 {
+  font-size: 60px;
+  color: #3498db;
+  margin-top: 50px;
+}
+/* Fichier statistics.component.css */
+
+.red-card {
+  background-color: #e74c3c; /* Rouge */
+}
+
+.red-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.red-card li {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #ffffff; /* Texte blanc sur fond rouge */
+}
+
+.red-card h3 {
+  font-size: 24px;
+  color: #ffffff; /* Texte blanc sur fond rouge */
+  margin-top: 10px;
+}
+/* Fichier statistics.component.css */
+
+.grey-card {
+  background-color: #95a5a6; /* Gris */
+}
+
+.grey-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.grey-card li {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #ffffff; /* Texte blanc sur fond gris */
+}
+
+.grey-card h3 {
+  font-size: 24px;
+  color: #ffffff; /* Texte blanc sur fond gris */
+  margin-top: 10px;
+}
+
+.green-card {
+  background-color: #2ecc71; /* Vert */
+}
+
+.green-card p {
+  margin-bottom: 40px;
+  font-size: 30px;
+  color: #ffffff; /* Texte blanc sur fond vert */
+}
+
+.green-card h1 {
+  font-size: 30px;
+  color: #ffffff; /* Texte blanc sur fond vert */
+  margin-top: 10px;
+}
+
+
+
+
+

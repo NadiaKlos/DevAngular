@@ -1,0 +1,21 @@
+/* subject-selector.component.css */
+.subject-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.subject-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 8px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.subject-card img {
+  max-width: 100%;
+  max-height: 100px;
+  margin-bottom: 8px;
+}
